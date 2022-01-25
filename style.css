@@ -297,7 +297,6 @@ label {
 #main-part2{
     display: flex;
     margin-top:5%;
-    height:328px;
     justify-content: space-around;
 }
 #setalramcards{
@@ -444,11 +443,18 @@ table {
     }
     #recent-alarams-card {
         font-size: 0.7rem;
+        width: 100%;
+    }
+    #set-alaram-card{
+        width: 100%;
     }
     #wrapper {
        font-size: 2rem;
     }
-    
+    #main-part2{
+        /* justify-content: space-between; */
+        flex-direction: column;
+    }
     #button-start{
         font-size: 0.8rem;
     }
@@ -466,7 +472,7 @@ table {
         font-size: 10px;
     }
     #setalramcards{
-        margin-top: 30%;
+        width: 100%;
         font-size: 0.8rem;
     }
     #Alramring{
