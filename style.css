@@ -270,7 +270,7 @@ label {
     height: 680px;
 }
 #analog-clock-section{
-    /* height: 40px; */
+    height: 700px;
 
 }
 #ringtone{
@@ -379,7 +379,6 @@ table {
 
 #clockContainer {
     position: relative;
-    margin-top:5%;
     margin-left:25%;
     height: 40vw;
     border-radius:50%;
