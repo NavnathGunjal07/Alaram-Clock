@@ -48,26 +48,26 @@ function startAlaram(Recent_alram_Time){
 // to display current time digital
 var currentTime = setInterval(function(){
 	let date = new Date(); 
-  let hh = date.getHours();
-  let mm = date.getMinutes();
-  let ss = date.getSeconds();
+  let h_hours = date.getHours();
+  let m_minutes = date.getMinutes();
+  let s_seconds = date.getSeconds();
   let session = "AM";
 
   //because of date function gives 24 hour time
-  if(hh == 0){
-      hh = 12;
+  if(h_hours == 0){
+      h_hours = 12;
   }
-  if(hh > 12){
-      hh = hh - 12;
+  if(h_hours > 12){
+      h_hours = h_hours - 12;
       session = "PM";
    }
 
-   // for appending zero to hours,sec & min
-   hh = (hh < 10) ? "0" + hh : hh;
-   mm = (mm < 10) ? "0" + mm : mm;
-   ss = (ss < 10) ? "0" + ss : ss;
+   // for prepending zero to hours,sec & min
+   h_hours = (h_hours < 10) ? "0" + h_hours : h_hours;
+   m_minutes = (m_minutes < 10) ? "0" + m_minutes : m_minutes;
+   s_seconds = (s_seconds < 10) ? "0" + s_seconds : s_seconds;
     
-   let currentTime = hh + ":" + mm + ":" + ss + "" + session;
+   let currentTime = h_hours + ":" + m_minutes + ":" + s_seconds + "" + session;
 	
 	h2.textContent = currentTime;
 	
@@ -75,8 +75,7 @@ var currentTime = setInterval(function(){
 
 
 // function to append zero
-function addZero(time) {
-
+function prependZero(time) {
 	return (time < 10) ? "0" + time : time;
 
 }
@@ -121,24 +120,24 @@ secMenu();
 //function for ringing alaram 
 setInterval(function(){
 	let date = new Date(); 
-  let hh = date.getHours();
-  let mm = date.getMinutes();
-  let ss = date.getSeconds();
+  let h_hours = date.getHours();
+  let m_minutes = date.getMinutes();
+  let s_seconds = date.getSeconds();
   let session = "AM";
 
-  if(hh == 0){
-      hh = 12;
+  if(h_hours == 0){
+      h_hours = 12;
   }
-  if(hh > 12){
-      hh = hh - 12;
+  if(h_hours > 12){
+      h_hours = h_hours - 12;
       session = "PM";
    }
 
-   hh = (hh < 10) ? "0" + hh : hh;
-   mm = (mm < 10) ? "0" + mm : mm;
-   ss = (ss < 10) ? "0" + ss : ss;
+   h_hours = (h_hours < 10) ? "0" + h_hours : h_hours;
+   m_minutes = (m_minutes < 10) ? "0" + m_minutes : m_minutes;
+   s_seconds = (s_seconds < 10) ? "0" + s_seconds : s_seconds;
     
-   let current_Time = hh + ":" + mm + ":" + ss + "" +session;
+   let current_Time = h_hours + ":" + m_minutes + ":" + s_seconds + "" +session;
 
 	for(let i of arrStore){
 		if (i == current_Time) {
@@ -179,7 +178,7 @@ function alarmSet() {
     var selectedSec = sec.options[sec.selectedIndex].value;
     var selectedAP = ap.options[ap.selectedIndex].value;
 
-    var alarmTime = addZero(selectedHour) + ":" + addZero(selectedMin) + ":" + addZero(selectedSec) + selectedAP;
+    var alarmTime =prependZero(selectedHour) + ":" +prependZero(selectedMin) + ":" +prependZero(selectedSec) + selectedAP;
     console.log('alarmTime:' + alarmTime);
 
 
