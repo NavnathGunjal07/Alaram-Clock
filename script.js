@@ -80,44 +80,32 @@ function prependZero(time) {
 
 }
 
-// function for selecting hours from dropdown
-function hoursMenu(){
+// function for selecting hours,minutes and seconds from dropdown
+function selectBox(){
 
-	var select = document.getElementById('alarmhrs');
+	var select_hrs = document.getElementById('alarmhrs');
 	var hrs = 12
-
-	for (i=1; i <= hrs; i++) {
-		select.options[select.options.length] = new Option( i < 10 ? "0" + i : i, i);
-		
-	}
-}
-hoursMenu();
-
-// function for selecting minutes from dropdown
-function minMenu(){
-
-	var select = document.getElementById('alarmmins');
+	var select_mins = document.getElementById('alarmmins');
 	var min = 59;
-
-	for (i=0; i <= min; i++) {
-		select.options[select.options.length] = new Option(i < 10 ? "0" + i : i, i);
-	}
-}
-minMenu();
-
-// function for selecting seconds from dropdown
-function secMenu(){
-
-	var select = document.getElementById('alarmsecs');
+	var select_sec = document.getElementById('alarmsecs');
 	var sec = 59;
 
+	for (i=1; i <= hrs; i++) {
+		select_hrs.options[select_hrs.options.length] = new Option( i < 10 ? "0" + i : i, i);
+		
+	}
+	for (i=0; i <= min; i++) {
+		select_mins.options[select_mins.options.length] = new Option(i < 10 ? "0" + i : i, i);
+	}
 	for (i=0; i <= sec; i++) {
-		select.options[select.options.length] = new Option(i < 10 ? "0" + i : i, i);
+		select_sec.options[select_sec.options.length] = new Option(i < 10 ? "0" + i : i, i);
 	}
 }
-secMenu();
+selectBox();
 
-//function for ringing alaram 
+
+
+//function for ringing alaram checking every 1000ms if alram found in arr it will start ringing
 setInterval(function(){
 	let date = new Date(); 
   let h_hours = date.getHours();
@@ -182,7 +170,7 @@ function alarmSet() {
     console.log('alarmTime:' + alarmTime);
 
 
- // if alram is not present in arr, add it in arr
+ // if alram is not present in arr, add it in arr and also add it in set alram list 
 	if(!arrStore.includes(alarmTime)){
 		arrStore.push(alarmTime);
 		const ele1 = document.createElement("div");
@@ -223,7 +211,6 @@ function alarmClear() {
 // for Stopwatch function
 
 window.onload = function () {
-  
 	var seconds = 00; 
 	var tens = 00; 
 	var appendTens = document.getElementById("tens")
@@ -251,9 +238,6 @@ window.onload = function () {
 	  appendTens.innerHTML = tens;
 		appendSeconds.innerHTML = seconds;
 	}
-	
-	 
-	
 	function startTimer () {
 	  tens++; 
 	  

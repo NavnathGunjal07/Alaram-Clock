@@ -11,7 +11,7 @@ It's a Simple Alram Clock web page designed in HTML, CSS & JavaScript for people
 
 ## Demo
 
-Insert gif or link to demo
+https://navnathgunjal07.github.io/Alaram-Clock/
 
 
 ## Features
@@ -24,6 +24,15 @@ Insert gif or link to demo
 
 
 ## Screenshots
+  - Desktop view
+    - Home Page
+      ![Screenshot (103)](https://user-images.githubusercontent.com/53387548/151708644-3edb91c1-7447-4544-8b94-9bed6cd5dcc7.png)
+    - StopWatch Page
+      ![Screenshot (104)](https://user-images.githubusercontent.com/53387548/151708655-22cb4557-a143-4a32-8cc8-1c22c530812d.png)
+    - Analog Clock
+      ![Screenshot (105)](https://user-images.githubusercontent.com/53387548/151708666-9f514e33-b72b-4f47-be4d-2aad18820e12.png)
+
+    
 ## Color Reference
 
 | Color             | Hex                                                                |
